@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1064979435151",
+    "firebase_url": "https://yogacorrectionapp.firebaseio.com",
+    "project_id": "yogacorrectionapp",
+    "storage_bucket": "yogacorrectionapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064979435151:android:7b0de8069d75c284fdaafa",
+        "android_client_info": {
+          "package_name": "com.infinity.yogacorrectionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064979435151-lvvkug7ad730bhb8lbb0lhee31njelh8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.infinity.yogacorrectionapp",
+            "certificate_hash": "9a0f34f98bf4b09897c8f99817c1ab9e9d987171"
+          }
+        },
+        {
+          "client_id": "1064979435151-dm5ln8d6irqhp2dek4n5i0gomp6nh002.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm2zKtYJ7hYrvBS2Ce1k7PqfScPdQa6QQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064979435151-dm5ln8d6irqhp2dek4n5i0gomp6nh002.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
