@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/807406586/LiveVideoBroadcaster-sdk.iml" filepath="$PROJECT_DIR$/.idea/modules/807406586/LiveVideoBroadcaster-sdk.iml" group="LiveVideoBroadcaster-sdk" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-922986868/app.iml" filepath="$PROJECT_DIR$/.idea/modules/-922986868/app.iml" group="LiveVideoBroadcaster-sdk/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/liveVideoBroadcasterSDK.iml" filepath="$PROJECT_DIR$/.idea/modules/liveVideoBroadcasterSDK.iml" group="LiveVideoBroadcaster-sdk/liveVideoBroadcasterSDK" />
+    </modules>
+  </component>
+</project>
