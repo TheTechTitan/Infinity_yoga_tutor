@@ -20,6 +20,8 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.infinity.yogacorrectionapp.HttpRequest.UserController;
 import com.infinity.yogacorrectionapp.R;
 
 import androidx.core.app.ActivityCompat;
@@ -51,6 +53,9 @@ import static com.infinity.yogacorrectionapp.MainActivity.RTMP_BASE_URL;
 
 public class LiveVideoBroadcasterActivity extends AppCompatActivity {
 
+
+    //REST
+    UserController userController=new UserController();
 
     public static final String STREAM_NAME ="yoga";
 
@@ -262,6 +267,11 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
         {
             if (mLiveVideoBroadcaster != null) {
                 if (!mLiveVideoBroadcaster.isConnected()) {
+
+                    //REST
+                    userController.initiatePrediction("http://whitecat/test",2, FirebaseInstanceId.getInstance().getToken());
+                    Log.d("InitiatePrediction","Start Initiate here");
+
                     String streamName = STREAM_NAME;
 
                     new AsyncTask<String, String, Boolean>() {
@@ -308,6 +318,10 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
         }
         else
         {
+            //REST
+            userController.stopPrediction();
+            Log.d("InitiatePrediction","Stop prediction here");
+
             triggerStopRecording();
         }
 
