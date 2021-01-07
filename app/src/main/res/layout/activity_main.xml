@@ -27,7 +27,6 @@
         android:background="@drawable/start_session_btn_bg"
         android:backgroundTint="#4C838A"
         android:fontFamily="monospace"
-        android:onClick="openVideoBroadcaster"
         android:shadowColor="#000000"
         android:text="START SESSION"
         android:textColor="#FFFFFF"

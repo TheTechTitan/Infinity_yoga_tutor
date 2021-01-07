@@ -14,29 +14,29 @@ public class MainActivity extends AppCompatActivity {
 
     Button mStartBtn;
 
-    //public static final String RTMP_BASE_URL = "rtmp://192.168.1.2:1935/live/";
-    public static final String RTMP_BASE_URL = "rtmp://192.168.1.5/LiveApp/";
+    public static final String RTMP_BASE_URL = "rtmp://192.168.1.4:1935/live/";
+    //public static final String RTMP_BASE_URL = "rtmp://192.168.1.5/LiveApp/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*mStartBtn=findViewById(R.id.StartBtn);
+        mStartBtn=findViewById(R.id.StartBtn);
 
         mStartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),SeverityLevel.class));
             }
-        });*/
+        });
 
     }
 
-    public void openVideoBroadcaster(View view) {
+    /*public void openVideoBroadcaster(View view) {
         Intent i = new Intent(this, LiveVideoBroadcasterActivity.class);
         startActivity(i);
-    }
+    }*/
 
     public void signOut(View view){
         FirebaseAuth.getInstance().signOut();

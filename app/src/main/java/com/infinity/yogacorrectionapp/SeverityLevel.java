@@ -12,6 +12,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.infinity.yogacorrectionapp.liveVideoBroadcaster.LiveVideoBroadcasterActivity;
+
 public class SeverityLevel extends Activity implements View.OnClickListener{
 
     Button mBeginnerBtn;
@@ -55,23 +57,23 @@ public class SeverityLevel extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
 
-        String level;
+        int level;
 
         if(v==mBeginnerBtn){
-            level="Beginner";
+            level=1;
         }else if(v==mIntermediateBtn){
-            level="Intermediate";
+            level=2;
         }else{
-            level="Expert";
+            level=3;
         }
 
         beginSession(level);
     }
 
-    public void beginSession(String level){
+    public void beginSession(int level){
 
-        Intent intent=new Intent(this,YogaSession.class);
-        intent.putExtra(EXTRA_SEVERITY,level);
-        startActivity(intent);
+        Intent i = new Intent(this, LiveVideoBroadcasterActivity.class);
+        i.putExtra(EXTRA_SEVERITY,level);
+        startActivity(i);
     }
 }

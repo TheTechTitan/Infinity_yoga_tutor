@@ -23,6 +23,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.infinity.yogacorrectionapp.HttpRequest.UserController;
 import com.infinity.yogacorrectionapp.R;
+import com.infinity.yogacorrectionapp.SeverityLevel;
 
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
@@ -58,6 +59,9 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
     UserController userController=new UserController();
 
     public static final String STREAM_NAME ="yoga";
+
+    Intent severityLevelIntent;
+    int severityLevel;
 
     TextView mPosture;
     TextView mConfidence;
@@ -126,8 +130,11 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
         mSettingsButton = (ImageButton)findViewById(R.id.settings_button);
         mStreamLiveStatus = (TextView) findViewById(R.id.stream_live_status);
 
-
         mBroadcastControlButton = (Button) findViewById(R.id.toggle_broadcasting);
+
+        //Get severity level
+        severityLevelIntent=getIntent();
+        severityLevel=severityLevelIntent.getIntExtra(SeverityLevel.EXTRA_SEVERITY,1);
 
         // Configure the GLSurfaceView.  This will start the Renderer thread, with an
         // appropriate EGL activity.
@@ -269,7 +276,7 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
                 if (!mLiveVideoBroadcaster.isConnected()) {
 
                     //REST
-                    userController.initiatePrediction("http://whitecat/test",2, FirebaseInstanceId.getInstance().getToken());
+                    userController.initiatePrediction("rtmp://polobear/iceland",severityLevel, FirebaseInstanceId.getInstance().getToken());
                     Log.d("InitiatePrediction","Start Initiate here");
 
                     String streamName = STREAM_NAME;
