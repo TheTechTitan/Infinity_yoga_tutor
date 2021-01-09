@@ -41,6 +41,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -62,6 +63,9 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
 
     Intent severityLevelIntent;
     int severityLevel;
+
+    String currentPosture="No Posture Detected";
+    VideoView videoView;
 
     TextView mPosture;
     TextView mConfidence;
@@ -125,6 +129,7 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
 
         mConfidence=findViewById(R.id.textConfidence);
         mPosture=findViewById(R.id.textPosture);
+        videoView=findViewById(R.id.videoView2);
 
         mRootView = (ViewGroup)findViewById(R.id.root_layout);
         mSettingsButton = (ImageButton)findViewById(R.id.settings_button);
@@ -150,7 +155,23 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
             String title=intent.getStringExtra("title");
             String message=intent.getStringExtra("message");
             mConfidence.setText(title);
-            mPosture.setText(message);
+
+            if(!currentPosture.equals(message)){
+                videoView.setVideoPath("android.resource://"+getPackageName()+"/"+message);
+
+                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.bhujangasana);
+                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.padmasana);
+                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.shavasana);
+                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.vrikshasana);
+                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.trikonasana);
+                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.tadasana);
+                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.idle);
+                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.personnotfound);
+                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.personnotfullyinframe);
+                Log.d("Testt current old","android.resource://"+getPackageName()+"/"+R.raw.predicting);
+
+                videoView.start();
+            }
         }
     };
 
@@ -219,7 +240,7 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
         super.onPause();
         Log.i(TAG, "onPause");
 
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(mHandler);
+        //LocalBroadcastManager.getInstance(this).unregisterReceiver(mHandler);
 
         //hide dialog if visible not to create leaked window exception
         if (mCameraResolutionsDialog != null && mCameraResolutionsDialog.isVisible()) {
@@ -276,7 +297,7 @@ public class LiveVideoBroadcasterActivity extends AppCompatActivity {
                 if (!mLiveVideoBroadcaster.isConnected()) {
 
                     //REST
-                    userController.initiatePrediction("rtmp://polobear/iceland",severityLevel, FirebaseInstanceId.getInstance().getToken());
+                    userController.initiatePrediction("webcam",severityLevel, FirebaseInstanceId.getInstance().getToken());
                     Log.d("InitiatePrediction","Start Initiate here");
 
                     String streamName = STREAM_NAME;

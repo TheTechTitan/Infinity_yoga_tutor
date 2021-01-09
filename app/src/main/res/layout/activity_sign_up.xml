@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/Username"
-        android:layout_width="260dp"
+        android:layout_width="285dp"
         android:layout_height="45dp"
         android:ems="10"
         android:hint="Username"
@@ -23,7 +23,7 @@
 
     <EditText
         android:id="@+id/Password"
-        android:layout_width="260dp"
+        android:layout_width="285dp"
         android:layout_height="45dp"
         android:ems="10"
         android:hint="Password"
@@ -37,7 +37,7 @@
 
     <EditText
         android:id="@+id/CPassword"
-        android:layout_width="260dp"
+        android:layout_width="285dp"
         android:layout_height="45dp"
         android:ems="10"
         android:hint="Confirm Password"
@@ -51,11 +51,11 @@
 
     <Button
         android:id="@+id/SignUpBtn"
-        android:layout_width="260dp"
+        android:layout_width="280dp"
         android:layout_height="45dp"
-        android:text="Sign Up"
-        android:fontFamily="sans-serif"
         android:background="@drawable/sign_in_up_btn_bg"
+        android:fontFamily="sans-serif"
+        android:text="Sign Up"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#FFFFFF"
         android:textColorHint="#FFFFFF"
@@ -70,7 +70,7 @@
 
     <EditText
         android:id="@+id/Email"
-        android:layout_width="260dp"
+        android:layout_width="285dp"
         android:layout_height="45dp"
         android:ems="10"
         android:hint="Email"
@@ -116,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.186"
         app:srcCompat="@drawable/infinity_yoga" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
